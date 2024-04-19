@@ -17,7 +17,6 @@ export class ReviewsComponent {
   }
 
   starsBlank(size: any) {
-    console.log(Math.ceil(size));
     return Array.from({ length: Math.ceil(5 - size) }, (_, index) => index + 1);
   }
 }

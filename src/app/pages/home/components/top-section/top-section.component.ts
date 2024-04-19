@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-section',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './top-section.component.css'
 })
 export class TopSectionComponent {
+  constructor(private router: Router) {}
 
+  showCategory(categoryName: string) {
+    console.log(categoryName);
+    this.router.navigate(['category', categoryName.replaceAll(' ', '')]);
+  }
 }

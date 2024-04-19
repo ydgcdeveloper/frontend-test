@@ -16,7 +16,7 @@ export class CommonService {
     return this.http.get<any[]>(this.PRODUCT_FILE_DATA_PATH).pipe(
       map((products: { [key: string]: any }) => {
         const productArray = Object.keys(products).map(key => products[key]);
-        return productArray.map((product: any, index: number) => ({ ...product, id: index }));
+        return productArray.map((product: any, index: number) => ({ ...product, id: index + 1 }));
       })
     );
   }

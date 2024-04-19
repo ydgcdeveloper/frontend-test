@@ -13,7 +13,6 @@ export class HookProductsComponent {
   constructor(private router: Router) {}
 
   showCategory(categoryName: string) {
-    console.log(categoryName);
     this.router.navigate(['category', categoryName.replaceAll(' ', '')]);
   }
 

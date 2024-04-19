@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonService } from '../../services/common.service';
 import { FooterComponent } from '../home/components/footer/footer.component';
 import { Store } from '@ngrx/store';
 import { selectProductById } from '../../core/redux/product';
@@ -7,6 +6,7 @@ import { ProductState } from '../../core/redux';
 import { IProduct } from '../../core/interfaces/product.interface';
 import { Router, RouterModule } from '@angular/router';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
@@ -30,8 +30,13 @@ export default class ProductDetailsComponent{
 
   constructor(
     private router: Router,
-    private store: Store<ProductState>
+    private store: Store<ProductState>,
+    private location: Location
   ) {}
+
+  goBack() {
+    this.location.back();
+  }
 
   goToOriginal(){
     this.router.navigateByUrl('home');

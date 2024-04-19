@@ -24,9 +24,9 @@ export default class CategoryComponent {
       .select(selectProductsByCategory(categoryName?.replaceAll(' ', '')))
       .subscribe((products) => {
         this.products = products;
-        if (!this.products) {
-          this.router.navigateByUrl('home');
-        }
+        // if (!this.products) {
+        //   this.router.navigateByUrl('home');
+        // }
       });
   }
 

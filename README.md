@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Check it here:
+
+![canvas](https://github.com/ydgcdeveloper/frontend-test/assets/63915445/3f9499d5-40c5-4775-9857-3b072aad5b9f)
+
+Live: https://adidas-ydgcdeveloper.vercel.app
+
+

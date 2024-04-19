@@ -14,63 +14,12 @@
             alt="Product Image"
             class="aspect-square w-full rounded-lg object-cover"
           />
-          <div class="grid md:grid-cols-4 gap-4">
-            <button
-              class="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50"
-            >
-              <img
-                [src]="product?.Image || product?.Image1"
-                width="100"
-                height="100"
-                alt="Product Thumbnail"
-                class="aspect-square object-cover"
-              />
-              <span class="sr-only">View Image 1</span>
-            </button>
-            <button
-              class="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50"
-            >
-              <img
-                [src]="product?.Image || product?.Image1"
-                width="100"
-                height="100"
-                alt="Product Thumbnail"
-                class="aspect-square object-cover"
-              />
-              <span class="sr-only">View Image 2</span>
-            </button>
-            <button
-              class="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50"
-            >
-              <img
-                [src]="product?.Image || product?.Image1"
-                width="100"
-                height="100"
-                alt="Product Thumbnail"
-                class="aspect-square object-cover"
-              />
-              <span class="sr-only">View Image 3</span>
-            </button>
-            <button
-              class="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors dark:hover:border-gray-50"
-            >
-              <img
-                [src]="product?.Image || product?.Image1"
-                width="100"
-                height="100"
-                alt="Product Thumbnail"
-                class="aspect-square object-cover"
-              />
-              <span class="sr-only">View Image 4</span>
-            </button>
-          </div>
         </div>
         <div class="grid gap-6">
           <div class="flex items-center justify-between">
             <a
               class="flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-              href="#"
-              rel="ugc"
+              routerLink="." 
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

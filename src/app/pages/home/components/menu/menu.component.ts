@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,11 +9,5 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-
-  constructor(private router: Router) {}
-
-  showCategory(categoryName: string) {
-    this.router.navigate(['category', categoryName.replaceAll(' ', '')]);
-  }
 
 }

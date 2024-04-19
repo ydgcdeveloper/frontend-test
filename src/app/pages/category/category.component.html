@@ -1,0 +1,43 @@
+<div class="flex flex-col min-h-[100dvh]">
+  <app-navbar></app-navbar>
+  <main class="flex-1">
+    <section class="w-full py-12">
+      <div
+        class="container grid gap-6 md:gap-8 px-4 md:px-6 max-w-xl mx-auto lg:max-w-none"
+      >
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8"
+        >
+          <div class="grid gap-1">
+            <h1 class="text-2xl font-bold tracking-tight">Shop by Sport</h1>
+            <p class="text-gray-500 dark:text-gray-400">
+              Find the gear you need for your favorite sport.
+            </p>
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          @for (product of products; track $index) {
+          <div class="grid gap-6 mt-3 relative group">
+            <a class="absolute inset-0 z-10" [routerLink]="['/product-details', product?.id]">
+              <span class="sr-only">View</span>
+            </a>
+            <img
+              [src]="product?.Image || product?.Image1"
+              alt="Basketball"
+              width="450"
+              height="600"
+              class="rounded-lg object-cover w-full aspect-[3/4] group-hover:opacity-100 transition-opacity"
+            />
+            <div class="grid gap-1">
+              <h3 class="font-semibold">{{ product?.Category }}</h3>
+              <p class="text-sm leading-none">{{ product?.Name }}</p>
+              <p class="font-semibold">{{ product?.Price }}</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,58 @@
+<div class="flex flex-col min-h-[100dvh]">
+  <app-navbar></app-navbar>
+  <main class="flex-1">
+    <app-top-section></app-top-section>
+    <app-hook-products></app-hook-products>
+    <section class="bg-white dark:bg-gray-950 dark:text-white py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col justify-center space-y-4">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">Elevate Your Performance</h2>
+          <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl">
+            Discover our latest adidas performance collections designed to help you reach new heights.
+          </p>
+          <div class="flex flex-col md:flex-row items-center justify-start space-y-4 md:space-y-0 md:space-x-4">
+            <button (click)="showCategory('Men\'s Originals')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+              Shop Men
+            </button>
+            <button (click)="showCategory('Women\'s Originals')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+              Shop Women
+            </button>
+          </div>
+        </div>
+        <img
+          src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_800,w_800/ss24_tc_pro_pass_members_lam_d_799f976b38.jpg"
+          width="600"
+          height="400"
+          alt="Performance Image"
+          class="aspect-[3/2] w-full rounded-lg object-cover"
+        />
+      </div>
+    </section>
+    <section class="bg-gray-100 dark:bg-gray-800 dark:text-gray-100 py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img
+          src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_800,w_800/ss24_adidas_bape_embargo_hp_tc_d_7bb8eb7d22.jpg"
+          width="600"
+          height="400"
+          alt="Lifestyle Image"
+          class="aspect-[3/2] w-full rounded-lg object-cover"
+        />
+        <div class="flex flex-col justify-center space-y-4">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">Elevate Your Lifestyle</h2>
+          <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl">
+            Discover our latest adidas lifestyle collections designed to complement your everyday style.
+          </p>
+          <div class="flex flex-col md:flex-row items-center justify-start space-y-4 md:space-y-0 md:space-x-4">
+            <button (click)="showCategory('Men\'s Originals')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2">
+              Shop Men
+            </button>
+            <button (click)="showCategory('Women\'s Originals')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+              Shop Women
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>

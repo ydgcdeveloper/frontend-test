@@ -1,0 +1,263 @@
+<div class="flex flex-col min-h-[100dvh]">
+  <div class="flex-1">
+    <section
+      class="bg-white dark:bg-gray-950 dark:text-white py-12 md:py-16 lg:py-20"
+    >
+      <div
+        class="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-start"
+      >
+        <div class="grid gap-6">
+          <img
+            [src]="product?.Image || product?.Image1"
+            width="600"
+            height="600"
+            alt="Product Image"
+            class="aspect-square w-full rounded-lg object-cover"
+          />
+        </div>
+        <div class="grid gap-6">
+          <div class="flex items-center justify-between">
+            <a
+              class="flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+              routerLink="." 
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-5 w-5"
+              >
+                <path d="m12 19-7-7 7-7"></path>
+                <path d="M19 12H5"></path>
+              </svg>
+              Back
+            </a>
+            @if(product?.Reviews){
+            <app-reviews [review]="product?.Reviews"></app-reviews>
+            }
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+              {{ product?.Name }}
+            </h1>
+          </div>
+          <div class="grid gap-4">
+            <div class="grid gap-2">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+                for="color"
+              >
+                Colors
+              </label>
+              <div
+                aria-required="false"
+                dir="ltr"
+                class="flex items-center gap-2"
+                id="color"
+                tabindex="0"
+                style="outline: none"
+              >
+                @for (item of product?.Color_detail; track $index) {
+                <button
+                  class="border hover:border-gray-900 overflow-hidden transition-colors dark:hover:border-gray-50"
+                >
+                  <img
+                    [src]="item.image_url"
+                    width="50"
+                    height="50"
+                    alt="Product Color"
+                    class="aspect-square object-cover"
+                  />
+                </button>
+                }
+              </div>
+
+              <div aria-required="false" dir="ltr" class="flex">
+                @for (item of product?.Color_detail; track $index) { @if($index
+                === 0){
+                <span>{{ item.color }}</span>
+                }@else {
+                <span>&nbsp;&nbsp;/&nbsp;&nbsp;{{ item.color }}</span>
+                } }
+              </div>
+            </div>
+            <div class="grid gap-2">
+              <label
+                class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+                for="size"
+              >
+                Size
+              </label>
+              <div
+                role="radiogroup"
+                aria-required="false"
+                dir="ltr"
+                class="flex items-center gap-2"
+                id="size"
+                tabindex="0"
+                style="outline: none"
+              >
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&amp;:has(:checked)]:bg-gray-100 dark:[&amp;:has(:checked)]:bg-gray-800"
+                  for="size-7"
+                >
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="7"
+                    class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="size-7"
+                    tabindex="-1"
+                    data-radix-collection-item=""
+                  ></button>
+                  7
+                </label>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&amp;:has(:checked)]:bg-gray-100 dark:[&amp;:has(:checked)]:bg-gray-800"
+                  for="size-8"
+                >
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="8"
+                    class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="size-8"
+                    tabindex="-1"
+                    data-radix-collection-item=""
+                  ></button>
+                  8
+                </label>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&amp;:has(:checked)]:bg-gray-100 dark:[&amp;:has(:checked)]:bg-gray-800"
+                  for="size-9"
+                >
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked="true"
+                    data-state="checked"
+                    value="9"
+                    class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="size-9"
+                    tabindex="-1"
+                    data-radix-collection-item=""
+                  >
+                    <span
+                      data-state="checked"
+                      class="flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-2.5 w-2.5 fill-current text-current"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                      </svg>
+                    </span>
+                  </button>
+                  9
+                </label>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&amp;:has(:checked)]:bg-gray-100 dark:[&amp;:has(:checked)]:bg-gray-800"
+                  for="size-10"
+                >
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="10"
+                    class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="size-10"
+                    tabindex="-1"
+                    data-radix-collection-item=""
+                  ></button>
+                  10
+                </label>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 border cursor-pointer rounded-md p-2 flex items-center gap-2 [&amp;:has(:checked)]:bg-gray-100 dark:[&amp;:has(:checked)]:bg-gray-800"
+                  for="size-11"
+                >
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="11"
+                    class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    id="size-11"
+                    tabindex="-1"
+                    data-radix-collection-item=""
+                  ></button>
+                  11
+                </label>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 min-[400px]:flex-row">
+              <button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+              >
+                Add to cart
+              </button>
+              <button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4 mr-2"
+                >
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                  ></path>
+                </svg>
+                Add to wishlist
+              </button>
+            </div>
+          </div>
+          <div class="grid gap-4 text-sm leading-loose">
+            @for (item of product?.Description_content?.split('\n'); track
+            $index) {
+            <p>{{ item }}</p>
+            }
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-4xl font-bold">{{ product?.Price }}</span>
+            <a [href]="product?.Content">
+              <button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 ml-auto bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+              >
+                Buy Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <app-footer></app-footer>
+</div>
